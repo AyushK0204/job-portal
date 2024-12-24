@@ -1,7 +1,7 @@
 import React from "react";
 
-const Application = () => {
-  return <div>Application</div>;
+const Applications = () => {
+  return <div>Applications</div>;
 };
 
-export default Application;
+export default Applications;
