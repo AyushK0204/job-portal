@@ -8,13 +8,14 @@ const Dashboard = () => {
   return (
     <div className="min-h-screen">
       {/* Navbar for recruiter panel */}
-      <div className="shadow py-6">
+      <div className="shadow py-2 bg-gradient-to-b from-orange-200 to-white">
         <div className="px-5 flex justify-between items-center">
           <img
             onClick={(e) => navigate("/")}
             className="max-sm:w-32 cursor-pointer"
             src={assets.logo}
             alt=""
+            width={120}
           />
           <div className="flex items-center gap-3">
             <p className="max-sm:hidden">Welcome, Ayush</p>
@@ -36,7 +37,7 @@ const Dashboard = () => {
 
       <div className="flex items-start">
         {/* Left sidebar with option to add job, manage jobs and view applications */}
-        <div className="inline-block min-h-screen border-r-2">
+        <div className="inline-block min-h-screen border-r-2 bg-gradient-to-r from-orange-100 to-white">
           <ul className="flex flex-col items-start pt-5 text-gray-800">
             <NavLink
               className={({ isActive }) =>

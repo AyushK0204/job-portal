@@ -10,13 +10,14 @@ const Navbar = () => {
   const navigate = useNavigate();
   const { setShowRecruiterLogin } = useContext(AppContext);
   return (
-    <div className="shadow py-4">
+    <div className="shadow py-2 bg-gradient-to-b from-orange-200 to-white">
       <div className="continer px-4 2xl:px-20 mx-auto flex justify-between items-center">
         <img
           onClick={() => navigate("/")}
           className="cursor-pointer"
           src={assets.logo}
           alt=""
+          width={120}
         />
         {user ? (
           <div className="flex items-center gap-3">
