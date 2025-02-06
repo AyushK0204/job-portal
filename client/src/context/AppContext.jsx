@@ -1,11 +1,14 @@
 import { createContext, useEffect, useState } from "react";
-import { jobsData } from "../assets/assets";
 import axios from "axios";
+import { useAuth, useUser } from "@clerk/clerk-react";
+import { toast } from "react-toastify";
 
 export const AppContext = createContext();
 
 export const AppContextProvider = (props) => {
   const backendUrl = import.meta.env.VITE_BACKEND_URL;
+  const { user } = useUser();
+  const { getToken } = useAuth();
 
   const [searchFilter, setSearchFilter] = useState({
     title: "",
@@ -13,19 +16,26 @@ export const AppContextProvider = (props) => {
   });
 
   const [isSearched, setIsSearched] = useState(false);
-
   const [jobs, setJobs] = useState([]);
-
   const [showRecruiterLogin, setShowRecruiterLogin] = useState(false);
-
   const [companyToken, setCompanyToken] = useState(null);
-
   const [companyData, setCompanyData] = useState(null);
+  const [userData, setUserData] = useState(null);
+  const [userApplications, setUserApplications] = useState([]);
 
   // function to fetch jobs
 
   const fetchJobs = async () => {
-    setJobs(jobsData);
+    try {
+      const { data } = await axios.get(backendUrl + "/api/jobs");
+      if (data.success) {
+        setJobs(data.jobs);
+      } else {
+        toast.error(data.message);
+      }
+    } catch (error) {
+      toast.error(error.message);
+    }
   };
 
   // function to fetch company data
@@ -40,7 +50,24 @@ export const AppContextProvider = (props) => {
         toast.error(data.message);
       }
     } catch (error) {
-      toast.error(data.message);
+      toast.error(error.message);
+    }
+  };
+
+  // function to fetch user data
+  const fetchUserData = async () => {
+    try {
+      const token = await getToken();
+      const { data } = await axios.get(backendUrl + "/api/users/user", {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      if (data.success) {
+        setUserData(data.user);
+      } else {
+        toast.error(data.message);
+      }
+    } catch (error) {
+      toast.error(error.message);
     }
   };
 
@@ -58,6 +85,12 @@ export const AppContextProvider = (props) => {
     }
   }, [companyToken]);
 
+  useEffect(() => {
+    if (user) {
+      fetchUserData();
+    }
+  }, [user]);
+
   const value = {
     setSearchFilter,
     searchFilter,
@@ -72,6 +105,11 @@ export const AppContextProvider = (props) => {
     companyData,
     setCompanyData,
     backendUrl,
+    userData,
+    setUserData,
+    userApplications,
+    setUserApplications,
+    fetchUserData,
   };
   return (
     <AppContext.Provider value={value}>{props.children}</AppContext.Provider>

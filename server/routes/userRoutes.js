@@ -13,12 +13,12 @@ const router = express.Router();
 router.get("/user", getUserData);
 
 // apply for a job
-router.post("apply", applyForJob);
+router.post("/apply", applyForJob);
 
 // get applied jobs data
 router.get("/applications", getUserJobApplications);
 
 // update user profile - resume
-router.post("update-resume", upload.single("resume"), updateUserProfile);
+router.post("/update-resume", upload.single("resume"), updateUserProfile);
 
 export default router;
