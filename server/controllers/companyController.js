@@ -187,7 +187,7 @@ export const changeJobApplicationsStatus = async (req, res) => {
     // find job applications and update status
     await JobApplication.findOneAndUpdate({ _id: id }, { status });
     res.json({
-      sucess: true,
+      success: true,
       message: "Status Changed",
     });
   } catch (error) {
