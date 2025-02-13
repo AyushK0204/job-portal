@@ -61,9 +61,9 @@ const ManageJobs = () => {
         <p className="text-xl sm:text-2xl">No Jobs Available or Posted</p>
       </div>
     ) : (
-      <div className="container p-4 max-w-5xl">
+      <div className="container p-4 max-w-5xl dark:bg-gray-900">
         <div className="overflow-x-auto">
-          <table className="min-w-full bg-white border border-gray-200 max-sm:text-sm">
+          <table className="min-w-full bg-white border border-gray-200 max-sm:text-sm dark:bg-gray-900 dark:text-white">
             <thead>
               <tr>
                 <th className="py-2 px-4 border-b text-left max-sm:hidden">
@@ -82,7 +82,7 @@ const ManageJobs = () => {
             </thead>
             <tbody>
               {jobs.map((job, index) => (
-                <tr key={index} className="text-gray-700">
+                <tr key={index} className="text-gray-700 dark:text-white">
                   <td className="py-2 px-4 border-b max-sm:hidden">
                     {index + 1}
                   </td>

@@ -5,8 +5,13 @@ import { AppContext } from "../context/AppContext";
 
 const Dashboard = () => {
   const navigate = useNavigate();
-  const { companyData, setCompanyData, setCompanyToken } =
-    useContext(AppContext);
+  const {
+    companyData,
+    setCompanyData,
+    setCompanyToken,
+    darkMode,
+    toggleDarkMode,
+  } = useContext(AppContext);
 
   const logout = () => {
     setCompanyToken(null);
@@ -22,9 +27,9 @@ const Dashboard = () => {
   }, [companyData]);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen dark:bg-black dark:text-white">
       {/* Navbar for recruiter panel */}
-      <div className="shadow py-2 bg-gradient-to-b from-orange-200 to-white">
+      <div className="shadow py-2 bg-gradient-to-b from-orange-200 to-white dark:from-gray-600 dark:to-black dark:text-white">
         <div className="px-5 flex justify-between items-center">
           <img
             onClick={(e) => navigate("/")}
@@ -60,13 +65,13 @@ const Dashboard = () => {
 
       <div className="flex items-start">
         {/* Left sidebar with option to add job, manage jobs and view applications */}
-        <div className="inline-block min-h-screen border-r-2 bg-gradient-to-r from-orange-100 to-white">
-          <ul className="flex flex-col items-start pt-5 text-gray-800">
+        <div className="inline-block min-h-screen border-r-2 bg-white dark:bg-black dark:text-white">
+          <ul className="flex flex-col items-start pt-5 text-gray-800 dark:text-white">
             <NavLink
               className={({ isActive }) =>
-                `flex items-center p-3 sm:px-6 gap-2 w-full hover:bg-gray-100 ${
+                `flex items-center p-3 sm:px-6 gap-2 w-full hover:bg-gray-100 dark:hover:text-black ${
                   isActive &&
-                  "bg-green-100 border-r-4 border-green-500 hover:bg-green-200"
+                  "bg-green-100 border-r-4 border-green-500 hover:bg-green-200 dark:text-black"
                 }`
               }
               to={"/dashboard/add-job"}
@@ -76,9 +81,9 @@ const Dashboard = () => {
             </NavLink>
             <NavLink
               className={({ isActive }) =>
-                `flex items-center p-3 sm:px-6 gap-2 w-full hover:bg-gray-100 ${
+                `flex items-center p-3 sm:px-6 gap-2 w-full hover:bg-gray-100 dark:hover:text-black ${
                   isActive &&
-                  "bg-green-100 border-r-4 border-green-500 hover:bg-green-200"
+                  "bg-green-100 border-r-4 border-green-500 hover:bg-green-200 dark:text-black"
                 }`
               }
               to={"/dashboard/manage-jobs"}
@@ -88,9 +93,9 @@ const Dashboard = () => {
             </NavLink>
             <NavLink
               className={({ isActive }) =>
-                `flex items-center p-3 sm:px-6 gap-2 w-full hover:bg-gray-100 ${
+                `flex items-center p-3 sm:px-6 gap-2 w-full hover:bg-gray-100 dark:hover:text-black ${
                   isActive &&
-                  "bg-green-100 border-r-4 border-green-500 hover:bg-green-200"
+                  "bg-green-100 border-r-4 border-green-500 hover:bg-green-200 dark:text-black"
                 }`
               }
               to={"/dashboard/view-applications"}
@@ -104,6 +109,16 @@ const Dashboard = () => {
           <Outlet />
         </div>
       </div>
+      <button
+        onClick={toggleDarkMode}
+        className="fixed w-10 h-10 bottom-16 right-16 dark:rounded-full z-50 dark:bg-black"
+      >
+        {darkMode ? (
+          <img src={assets.day_mode} alt="" />
+        ) : (
+          <img src={assets.night_mode} alt="" />
+        )}
+      </button>
     </div>
   );
 };

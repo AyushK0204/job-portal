@@ -90,20 +90,20 @@ const ApplyJob = () => {
   return jobData ? (
     <>
       <Navbar />
-      <div className="min-h-screen flex flex-col py-10 container px-4 2xl:px-20 mx-auto">
-        <div className="bg-white text-black rounded-lg w-full">
-          <div className="flex justify-center md:justify-between flex-wrap gap-8 px-14 py-20 mb-6 bg-green-50 border border-green-400 rounded-xl">
+      <div className="min-h-screen flex flex-col py-10 container px-4 2xl:px-20 mx-auto dark:bg-black dark:text-white">
+        <div className="bg-white text-black rounded-lg w-full dark:bg-black dark:text-white">
+          <div className="flex justify-center md:justify-between flex-wrap gap-8 px-14 py-20 mb-6 bg-green-50 border border-green-400 rounded-xl dark:bg-green-950">
             <div className="flex flex-col md:flex-row items-center">
               <img
                 className="h-24 bg-white rounded-lg p-4 mr-4 max-md:mb-4 border"
                 src={jobData.companyId.image}
                 alt=""
               />
-              <div className="text-center md:text-left text-neutral-700">
+              <div className="text-center md:text-left text-neutral-700 dark:text-white">
                 <h1 className="text-2xl sm:text-4xl font-medium">
                   {jobData.title}
                 </h1>
-                <div className="flex flex-row flex-wrap max-md:justify-center gap-y-2 gap-6 items-center text-gray-600 mt-2">
+                <div className="flex flex-row flex-wrap max-md:justify-center gap-y-2 gap-6 items-center text-gray-600 mt-2 dark:text-white">
                   <span className="flex items-center gap-1">
                     <img src={assets.suitcase_icon} alt="" />
                     {jobData.companyId.name}
@@ -131,7 +131,7 @@ const ApplyJob = () => {
               >
                 {isAlreadyApplied ? "Already Applied" : "Apply Now"}
               </button>
-              <p className="mt-1 text-gray-600">
+              <p className="mt-1 text-gray-600 dark:text-gray-300">
                 Posted {moment(jobData.date).fromNow()}
               </p>
             </div>
@@ -141,8 +141,10 @@ const ApplyJob = () => {
             <div className="w-full lg:w-2/3">
               <h2 className="font-bold text-2xl mb-4">Job description</h2>
               <div
-                className="rich-text"
-                dangerouslySetInnerHTML={{ __html: jobData.description }}
+                className="rich-text text-black dark:text-white"
+                dangerouslySetInnerHTML={{
+                  __html: jobData.description.replace(/style="[^"]*"/g, ""),
+                }}
               ></div>
               <button
                 onClick={applyHandler}

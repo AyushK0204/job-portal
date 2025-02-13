@@ -56,7 +56,7 @@ const Applications = () => {
   return (
     <>
       <Navbar />
-      <div className="container px-4 min-h-[65vh] 2xl:px-20 mx-auto my-10">
+      <div className="container px-4 min-h-[70vh] 2xl:px-20 mx-auto my-10">
         <h2 className="text-xl font-semibold">Your Resume</h2>
         <div className="flex gap-2 mb-6 mt-3">
           {isEdit || (userData && userData.resume === "") ? (
@@ -100,7 +100,7 @@ const Applications = () => {
           )}
         </div>
         <h2 className="text-xl font-semibold mb-4">Jobs Applied</h2>
-        <table className=" min-w-full bg-white border rounded-lg">
+        <table className=" min-w-full bg-white border rounded-lg dark:bg-gray-950 dark:text-white">
           <thead>
             <tr>
               <th className="py-3 px-4 border-b text-left">Company</th>
@@ -133,10 +133,10 @@ const Applications = () => {
                     <span
                       className={`${
                         job.status === "Accepted"
-                          ? "bg-green-100"
+                          ? "bg-green-100 dark:text-black"
                           : job.status === "Rejected"
-                          ? "bg-red-100"
-                          : "bg-yellow-100"
+                          ? "bg-red-100 dark:text-black"
+                          : "bg-yellow-100 dark:text-black"
                       } px-4 py-1.5 rounded`}
                     >
                       {job.status}

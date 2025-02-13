@@ -62,9 +62,9 @@ const ViewApplications = () => {
         <p className="text-xl sm:text-2xl">No Applications Available</p>
       </div>
     ) : (
-      <div className="container mx-auto p-4">
+      <div className="container mx-auto p-4 dark:bg-black">
         <div>
-          <table className="w-full max-w-4xl bg-white border border-gray-200 max-sm:text-sm">
+          <table className="w-full max-w-4xl bg-white border border-gray-200 max-sm:text-sm dark:bg-gray-900 dark:text-white">
             <thead>
               <tr className="border-b">
                 <th className="py-2 px-4 text-left">#</th>
@@ -79,7 +79,7 @@ const ViewApplications = () => {
               {applicants
                 .filter((item) => item.jobId && item.userId)
                 .map((applicant, index) => (
-                  <tr key={index} className="text-gray-700">
+                  <tr key={index} className="text-gray-700 dark:text-white">
                     <td className="py-2 px-4 border-b text-center">
                       {index + 1}
                     </td>

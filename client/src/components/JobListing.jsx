@@ -62,15 +62,15 @@ const JobListing = () => {
   }, [jobs, selectedCategories, selectedLocations, searchFilter]);
 
   return (
-    <div className="container 2xl:px-20 mx-auto flex flex-col lg:flex-row max-lg:space-y-8 py-8">
+    <div className="container 2xl:px-20 mx-auto flex flex-col lg:flex-row max-lg:space-y-8 py-8 dark:bg-black dark:text-white">
       {/* sidebar */}
-      <div className="w-full lg:w-1/4 bg-white px-4">
+      <div className="w-full lg:w-1/4 bg-white px-4 dark:bg-black dark:text-white">
         {/* search result from hero component */}
         {isSearched &&
           (searchFilter.title !== "" || searchFilter.location !== "") && (
             <>
               <h3 className="font-medium text-lg mb-4">Current Search</h3>
-              <div className="mb-4 text-gray-600">
+              <div className="mb-4 text-gray-600 dark:text-black">
                 {searchFilter.title && (
                   <span className="inline-flex items-center gap-2.5 bg-purple-50 border border-purple-200 px-4 py-1.5 rounded">
                     {searchFilter.title}
@@ -111,7 +111,7 @@ const JobListing = () => {
         {/* {category filter} */}
         <div className={showFilter ? "" : "max-lg:hidden"}>
           <h4 className="font-medium text-lg py-4">Search by Role</h4>
-          <ul className="space-y-4 text-gray-600 ">
+          <ul className="space-y-4 text-gray-600 dark:text-gray-400">
             {JobCategories.map((category, index) => (
               <li className="flex gap-3 items-center" key={index}>
                 <input
@@ -130,7 +130,7 @@ const JobListing = () => {
           <h4 className="font-medium text-lg py-4 pt-14">
             Search by Locations
           </h4>
-          <ul className="space-y-4 text-gray-600 ">
+          <ul className="space-y-4 text-gray-600 dark:text-gray-400">
             {JobLocations.map((location, index) => (
               <li className="flex gap-3 items-center" key={index}>
                 <input
@@ -148,7 +148,7 @@ const JobListing = () => {
 
       {/* {job listings} */}
 
-      <section className="w-full lg:w-3/4 text-gray-800 max-lg:px-4">
+      <section className="w-full lg:w-3/4 text-gray-800 max-lg:px-4 dark:text-white">
         <h3 className="font-medium text-3xl py-2" id="job-list">
           Latest Jobs
         </h3>
@@ -179,7 +179,7 @@ const JobListing = () => {
                     className={`w-10 h-10 flex items-center justify-center border border-gray-300 rounded ${
                       currentPage === index + 1
                         ? "bg-yellow-100 text-yellow-500"
-                        : "text-gray-500"
+                        : "text-gray-500 dark:text-white"
                     }`}
                   >
                     {index + 1}

@@ -8,9 +8,10 @@ const Navbar = () => {
   const { openSignIn } = useClerk();
   const { user } = useUser();
   const navigate = useNavigate();
-  const { setShowRecruiterLogin } = useContext(AppContext);
+  const { setShowRecruiterLogin, darkMode, toggleDarkMode } =
+    useContext(AppContext);
   return (
-    <div className="shadow py-2 bg-gradient-to-b from-orange-200 to-white">
+    <div className="shadow py-2 bg-gradient-to-b from-orange-200 to-white dark:from-gray-600 dark:to-black dark:text-white">
       <div className="continer px-4 2xl:px-20 mx-auto flex justify-between items-center">
         <img
           onClick={() => navigate("/")}
@@ -32,7 +33,7 @@ const Navbar = () => {
           <div className="flex gap-4 max-sm:text-xs">
             <button
               onClick={(e) => setShowRecruiterLogin(true)}
-              className="text-gray-600 "
+              className="text-gray-600 dark:text-white"
             >
               Recruiter Login
             </button>
@@ -45,6 +46,16 @@ const Navbar = () => {
           </div>
         )}
       </div>
+      <button
+        onClick={toggleDarkMode}
+        className="fixed w-10 h-10 bottom-16 right-16 dark:rounded-full z-50 dark:bg-black"
+      >
+        {darkMode ? (
+          <img src={assets.day_mode} alt="" />
+        ) : (
+          <img src={assets.night_mode} alt="" />
+        )}
+      </button>
     </div>
   );
 };

@@ -15,6 +15,7 @@ export const AppContextProvider = (props) => {
     location: "",
   });
 
+  const [darkMode, setDarkMode] = useState(true);
   const [isSearched, setIsSearched] = useState(false);
   const [jobs, setJobs] = useState([]);
   const [showRecruiterLogin, setShowRecruiterLogin] = useState(false);
@@ -22,6 +23,10 @@ export const AppContextProvider = (props) => {
   const [companyData, setCompanyData] = useState(null);
   const [userData, setUserData] = useState(null);
   const [userApplications, setUserApplications] = useState([]);
+
+  const toggleDarkMode = async () => {
+    setDarkMode(!darkMode);
+  };
 
   // function to fetch jobs
 
@@ -130,6 +135,8 @@ export const AppContextProvider = (props) => {
     setUserApplications,
     fetchUserData,
     fetchUserApplications,
+    darkMode,
+    toggleDarkMode,
   };
   return (
     <AppContext.Provider value={value}>{props.children}</AppContext.Provider>

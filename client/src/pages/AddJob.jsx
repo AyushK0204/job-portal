@@ -57,7 +57,7 @@ const AddJob = () => {
   return (
     <form
       onSubmit={onSubmitHandler}
-      className="container p-4 flex flex-col w-full items-start gap-3"
+      className="container p-4 flex flex-col w-full items-start gap-3 dark:bg-gray-900"
     >
       <div className="w-full">
         <p className="mb-2">Job Title</p>
@@ -67,7 +67,7 @@ const AddJob = () => {
           onChange={(e) => setTitle(e.target.value)}
           value={title}
           required
-          className="w-full max-w-lg px-3 py-2 border-2 border-gray-300 rounded"
+          className="w-full max-w-lg px-3 py-2 border-2 border-gray-300 rounded dark:text-black"
         />
       </div>
 
@@ -80,7 +80,7 @@ const AddJob = () => {
         <div>
           <p className="mb-2">Job Category</p>
           <select
-            className="w-full px-3 py-2 border-2 border-gray-300 rounded"
+            className="w-full px-3 py-2 border-2 border-gray-300 rounded dark:text-black"
             onChange={(e) => setCategory(e.target.value)}
           >
             {JobCategories.map((category, index) => (
@@ -94,7 +94,7 @@ const AddJob = () => {
         <div>
           <p className="mb-2">Job Location</p>
           <select
-            className="w-full px-3 py-2 border-2 border-gray-300 rounded"
+            className="w-full px-3 py-2 border-2 border-gray-300 rounded dark:text-black"
             onChange={(e) => setLocation(e.target.value)}
           >
             {JobLocations.map((location, index) => (
@@ -106,14 +106,18 @@ const AddJob = () => {
         </div>
 
         <div>
-          <p className="mb-2">Job Level</p>
+          <p className="mb-2">Job Experience</p>
           <select
-            className="w-full px-3 py-2 border-2 border-gray-300 rounded"
+            className="w-full px-3 py-2 border-2 border-gray-300 rounded dark:text-black"
             onChange={(e) => setLevel(e.target.value)}
           >
-            <option value="Beginner level">Beginner level</option>
-            <option value="Intermediate level">Intermediate level</option>
-            <option value="Senior level">Senior level</option>
+            <option value="Entry-Level (0-2 years)">
+              Entry-Level (0-2 years)
+            </option>
+            <option value="Mid-Level (3-7 years)">Mid-Level (3-7 years)</option>
+            <option value="Senior-Level (8+ years)">
+              Senior-Level (8+ years)
+            </option>
           </select>
         </div>
       </div>
@@ -121,7 +125,7 @@ const AddJob = () => {
       <div>
         <p className="mb-2">Job Salary</p>
         <input
-          className="w-full px-3 py-2 border-2 border-gray-300 rounded sm:w-[120px]"
+          className="w-full px-3 py-2 border-2 border-gray-300 rounded sm:w-[120px] dark:text-black"
           type="number"
           placeholder="2500"
           value={salary}
