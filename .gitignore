@@ -3,7 +3,6 @@ yarn-debug.log*
 yarn-error.log*
 
 /client/node_modules
-/client/src/assets
 /client/.env
 /server/.env
 /server/node_modules
