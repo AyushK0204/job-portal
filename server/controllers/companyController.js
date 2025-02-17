@@ -126,6 +126,7 @@ export const postJob = async (req, res) => {
     await newJob.save();
     res.json({
       success: true,
+      message: "Job Added Successfully!",
       newJob,
     });
   } catch (error) {
