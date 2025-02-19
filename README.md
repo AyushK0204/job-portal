@@ -75,6 +75,7 @@ To run this project, you will need to add the following environment variables to
   `VITE_BACKEND_URL`
 
 - For Server
+
   `JWT_SECRET`
   `MONGODB_URI`
   `SENTRY_DSN`
