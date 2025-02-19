@@ -10,7 +10,6 @@
 
 This project is built using the following technologies:
 
-- [![Next.js](https://img.shields.io/badge/Next.js-111?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
 - [![MongoDB](https://img.shields.io/badge/MongoDB-116149?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
 - [![React](https://img.shields.io/badge/React-087EA4?style=for-the-badge&logo=react&logoColor=white)](https://react.dev/)
 - [![Express.js](https://img.shields.io/badge/Express.js-202020?style=for-the-badge&logo=express&logoColor=white)](https://expressjs.com/)
