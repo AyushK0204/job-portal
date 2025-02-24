@@ -35,6 +35,7 @@ import adobe_logo from "./adobe_logo.png";
 import amazon_logo from "./amazon_logo.png";
 import day_mode from "./day_mode.png";
 import night_mode from "./night_mode.png";
+import hero_image from "./hero-background.jpg";
 
 export const assets = {
   logo,
@@ -74,6 +75,7 @@ export const assets = {
   amazon_logo,
   day_mode,
   night_mode,
+  hero_image,
 };
 
 export const JobCategories = [
