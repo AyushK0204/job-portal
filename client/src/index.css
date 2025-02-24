@@ -8,6 +8,12 @@
   @apply transition-colors duration-150;
 }
 
+body {
+  cursor: url("./assets/cursor.png"), auto;
+  background-image: url("./assets/bgAbstract.jpg");
+  background-size: cover;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;

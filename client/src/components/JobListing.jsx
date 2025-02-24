@@ -64,7 +64,7 @@ const JobListing = () => {
   return (
     <div className="container 2xl:px-20 mx-auto flex flex-col lg:flex-row max-lg:space-y-8 py-8 dark:bg-black dark:text-white">
       {/* sidebar */}
-      <div className="w-full lg:w-1/4 bg-white px-4 dark:bg-black dark:text-white">
+      <div className="w-full lg:w-1/4 bg-transparent px-4 dark:bg-black dark:text-white">
         {/* search result from hero component */}
         {isSearched &&
           (searchFilter.title !== "" || searchFilter.location !== "") && (

@@ -65,7 +65,7 @@ const Dashboard = () => {
 
       <div className="flex items-start">
         {/* Left sidebar with option to add job, manage jobs and view applications */}
-        <div className="inline-block min-h-screen border-r-2 bg-white dark:bg-black dark:text-white">
+        <div className="inline-block min-h-screen bg-transparent dark:bg-black dark:text-white">
           <ul className="flex flex-col items-start pt-5 text-gray-800 dark:text-white">
             <NavLink
               className={({ isActive }) =>
