@@ -74,7 +74,7 @@ const RecruiterLogin = () => {
   }, []);
 
   return (
-    <div className="absolute top-0 right-0 bottom-0 left-0 z-10 backdrop-blur-sm bg-black/40 flex justify-center items-center">
+    <div className="absolute top-0 right-0 bottom-0 left-0 z-20 backdrop-blur-sm bg-black/40 flex justify-center items-center">
       <form
         onSubmit={onSubmitHandler}
         className="relative bg-white p-10 rounded-xl text-slate-500"

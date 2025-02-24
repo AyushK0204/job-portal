@@ -48,7 +48,7 @@ const Navbar = () => {
       </div>
       <button
         onClick={toggleDarkMode}
-        className="fixed w-10 h-10 bottom-16 right-16 dark:rounded-full z-50 dark:bg-black"
+        className="fixed w-10 h-10 bottom-16 right-16 dark:rounded-full z-10 dark:bg-black"
       >
         {darkMode ? (
           <img src={assets.day_mode} alt="" />

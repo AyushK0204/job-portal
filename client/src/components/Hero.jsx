@@ -24,9 +24,9 @@ const Hero = () => {
           backgroundImage: `url(${assets.hero_image})`,
         }}
       >
-        <div className="absolute inset-0 bg-black bg-opacity-65 rounded-3xl"></div>
+        <div className="absolute inset-0 bg-black bg-opacity-70 rounded-3xl"></div>
 
-        <div className="relative z-10">
+        <div className="relative">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-medium mb-4">
             Find Your Dream Job Among 5,000+ Opportunities!
           </h2>

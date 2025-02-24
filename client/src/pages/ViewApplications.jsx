@@ -89,7 +89,7 @@ const ViewApplications = () => {
                         src={applicant.userId.image}
                         alt=""
                       />
-                      <span>{applicant.userId.name}</span>
+                      <span className="py-2">{applicant.userId.name}</span>
                     </td>
                     <td className="py-2 px-4 border-b max-sm:hidden">
                       {applicant.jobId.title}
