@@ -29,14 +29,13 @@ const Dashboard = () => {
   return (
     <div className="min-h-screen dark:bg-black dark:text-white">
       {/* Navbar for recruiter panel */}
-      <div className="shadow py-2 bg-gradient-to-b from-orange-200 to-white dark:from-gray-600 dark:to-black dark:text-white">
+      <div className="shadow py-2 bg-gradient-to-b from-green-200 to-white dark:from-gray-600 dark:to-black dark:text-white">
         <div className="px-5 flex justify-between items-center">
           <img
             onClick={(e) => navigate("/")}
-            className="max-sm:w-32 cursor-pointer"
+            className=" w-[90px] sm:w-[120px] cursor-pointer"
             src={assets.logo}
             alt=""
-            width={120}
           />
           {companyData && (
             <div className="flex items-center gap-3">
@@ -58,6 +57,16 @@ const Dashboard = () => {
                   </ul>
                 </div>
               </div>
+              <button
+                onClick={toggleDarkMode}
+                className="w-6 h-6 sm:w-7 sm:h-7 dark:rounded-full z-10 mt-1"
+              >
+                {darkMode ? (
+                  <img src={assets.day_mode} alt="" />
+                ) : (
+                  <img src={assets.night_mode} alt="" />
+                )}
+              </button>
             </div>
           )}
         </div>
@@ -109,16 +118,6 @@ const Dashboard = () => {
           <Outlet />
         </div>
       </div>
-      <button
-        onClick={toggleDarkMode}
-        className="fixed w-10 h-10 bottom-16 right-16 dark:rounded-full z-50 dark:bg-black"
-      >
-        {darkMode ? (
-          <img src={assets.day_mode} alt="" />
-        ) : (
-          <img src={assets.night_mode} alt="" />
-        )}
-      </button>
     </div>
   );
 };

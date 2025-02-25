@@ -11,14 +11,13 @@ const Navbar = () => {
   const { setShowRecruiterLogin, darkMode, toggleDarkMode } =
     useContext(AppContext);
   return (
-    <div className="shadow py-2 bg-gradient-to-b from-orange-200 to-white dark:from-gray-600 dark:to-black dark:text-white">
+    <div className="shadow py-2 bg-gradient-to-b from-green-200 to-white dark:from-gray-600 dark:to-black dark:text-white">
       <div className="continer px-4 2xl:px-20 mx-auto flex justify-between items-center">
         <img
           onClick={() => navigate("/")}
-          className="cursor-pointer"
+          className="cursor-pointer w-[90px] sm:w-[120px]"
           src={assets.logo}
           alt=""
-          width={120}
         />
         {user ? (
           <div className="flex items-center gap-3">
@@ -43,19 +42,19 @@ const Navbar = () => {
             >
               Login
             </button>
+            <button
+              onClick={toggleDarkMode}
+              className="w-6 h-6 sm:w-7 sm:h-7 dark:rounded-full z-10 sm:mt-2 mt-1"
+            >
+              {darkMode ? (
+                <img src={assets.day_mode} alt="" />
+              ) : (
+                <img src={assets.night_mode} alt="" />
+              )}
+            </button>
           </div>
         )}
       </div>
-      <button
-        onClick={toggleDarkMode}
-        className="fixed w-10 h-10 bottom-16 right-16 dark:rounded-full z-10 dark:bg-black"
-      >
-        {darkMode ? (
-          <img src={assets.day_mode} alt="" />
-        ) : (
-          <img src={assets.night_mode} alt="" />
-        )}
-      </button>
     </div>
   );
 };
