@@ -27,6 +27,16 @@ const Navbar = () => {
               Hi, {user.firstName + " " + user.lastName}
             </p>
             <UserButton />
+            <button
+              onClick={toggleDarkMode}
+              className="w-6 h-6 sm:w-7 sm:h-7 dark:rounded-full z-10 mt-1 sm:mt-0"
+            >
+              {darkMode ? (
+                <img src={assets.day_mode} alt="" />
+              ) : (
+                <img src={assets.night_mode} alt="" />
+              )}
+            </button>
           </div>
         ) : (
           <div className="flex gap-4 max-sm:text-xs">
