@@ -62,7 +62,7 @@ export const loginCompany = async (req, res) => {
   try {
     const company = await Company.findOne({ email });
     if (!company) {
-      res.json({
+      return res.json({
         success: false,
         message: "Invalid Email or Password",
       });

@@ -45,9 +45,32 @@ export const AppContextProvider = (props) => {
 
   // function to fetch company data
   const fetchCompanyData = async () => {
+    const storedToken = localStorage.getItem("companyToken");
+
+    if (!storedToken) {
+      setCompanyToken(null);
+      return;
+    }
+
+    // Decode token to check expiration
+    try {
+      const decodedToken = JSON.parse(atob(storedToken.split(".")[1])); // Decode JWT payload
+      const isExpired = decodedToken.exp * 1000 < Date.now();
+
+      if (isExpired) {
+        localStorage.removeItem("companyToken");
+        setCompanyToken(null);
+        return;
+      }
+    } catch (error) {
+      localStorage.removeItem("companyToken");
+      setCompanyToken(null);
+      return;
+    }
+
     try {
       const { data } = await axios.get(backendUrl + "/api/company/company", {
-        headers: { token: companyToken },
+        headers: { token: storedToken },
       });
       if (data.success) {
         setCompanyData(data.company);
