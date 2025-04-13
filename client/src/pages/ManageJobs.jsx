@@ -98,7 +98,7 @@ const ManageJobs = () => {
                   <td className="py-2 px-4 border-b">
                     <input
                       onChange={() => changeJobVisiblity(job._id)}
-                      className="scale-125 ml-4"
+                      className="scale-125 ml-4 hover:scale-150 transition-all duration-300 active:scale-95"
                       type="checkbox"
                       checked={job.visible}
                     />
@@ -111,7 +111,7 @@ const ManageJobs = () => {
         <div className="mt-4 flex justify-end">
           <button
             onClick={() => navigate("/dashboard/add-job")}
-            className="bg-black text-white py-2 px-4 rounded"
+            className="bg-black text-white py-2 px-4 rounded hover:scale-105 active:scale-95 transition-all duration-300 hover:bg-gray-800"
           >
             Add New Job
           </button>

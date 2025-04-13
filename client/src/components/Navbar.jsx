@@ -21,7 +21,12 @@ const Navbar = () => {
         />
         {user ? (
           <div className="flex items-center gap-3">
-            <Link to={"/applications"}>Applied Jobs</Link>
+            <Link
+              className="hover:scale-105 active:scale-95 transition-all duration-300"
+              to={"/applications"}
+            >
+              Applied Jobs
+            </Link>
             <p>|</p>
             <p className="max-sm:hidden">
               Hi, {user.firstName + " " + user.lastName}
@@ -29,7 +34,7 @@ const Navbar = () => {
             <UserButton />
             <button
               onClick={toggleDarkMode}
-              className="w-6 h-6 sm:w-7 sm:h-7 dark:rounded-full z-10 mt-1 sm:mt-0"
+              className="w-6 h-6 sm:w-7 sm:h-7 dark:rounded-full z-10 mt-1 sm:mt-0 hover:scale-110 active:scale-95 transition-all duration-300"
             >
               {darkMode ? (
                 <img src={assets.day_mode} alt="" />
@@ -42,19 +47,19 @@ const Navbar = () => {
           <div className="flex gap-4 max-sm:text-xs">
             <button
               onClick={(e) => setShowRecruiterLogin(true)}
-              className="text-gray-600 dark:text-white"
+              className="text-gray-600 dark:text-white hover:text-black hover:scale-105 transition-all duration-300"
             >
               Recruiter Login
             </button>
             <button
               onClick={(e) => openSignIn()}
-              className="bg-blue-600 text-white px-6 sm:px-9 py-2 rounded-full"
+              className="bg-blue-500 hover:bg-blue-600 text-white px-6 sm:px-9 py-2 rounded-full hover:scale-105 transition-all duration-300"
             >
               Login
             </button>
             <button
               onClick={toggleDarkMode}
-              className="w-6 h-6 sm:w-7 sm:h-7 dark:rounded-full z-10 sm:mt-2 mt-1"
+              className="w-6 h-6 sm:w-7 sm:h-7 dark:rounded-full z-10 sm:mt-2 mt-1 hover:scale-110 active:scale-95 transition-all duration-300"
             >
               {darkMode ? (
                 <img src={assets.day_mode} alt="" />

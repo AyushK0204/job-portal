@@ -5,7 +5,7 @@ const JobCard = ({ job }) => {
   const navigate = useNavigate();
 
   return (
-    <div className="border p-6 shadow rounded">
+    <div className="border p-6 shadow rounded hover:scale-105 transition-all duration-300 hover:bg-gray-100 dark:hover:bg-gray-900">
       <div className="flex justify-between items-center">
         <img className="h-8" src={job.companyId.image} alt="" />
       </div>
@@ -31,7 +31,7 @@ const JobCard = ({ job }) => {
             navigate(`/apply-job/${job._id}`);
             scrollTo(0, 0);
           }}
-          className="bg-green-600 text-white px-4 py-2 rounded"
+          className="bg-green-600 text-white px-4 py-2 rounded hover:scale-105 hover:bg-green-700 active:scale-95 transition-all duration-300"
         >
           Apply Now
         </button>
@@ -40,7 +40,7 @@ const JobCard = ({ job }) => {
             navigate(`/apply-job/${job._id}`);
             scrollTo(0, 0);
           }}
-          className="text-gray-500 border border-gray-500 px-4 py-2 rounded dark:text-white dark:border-white"
+          className="text-gray-500 border border-gray-500 px-4 py-2 rounded dark:text-white dark:border-white hover:scale-105 hover:bg-blue-800 hover:text-white active:scale-95 transition-all duration-300"
         >
           Learn More
         </button>

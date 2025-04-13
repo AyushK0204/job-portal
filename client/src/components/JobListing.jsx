@@ -115,7 +115,7 @@ const JobListing = () => {
             {JobCategories.map((category, index) => (
               <li className="flex gap-3 items-center" key={index}>
                 <input
-                  className="scale-125 accent-yellow-500 "
+                  className="scale-125 hover:scale-150 active:scale-125 transition-all duration-300 accent-yellow-500 "
                   type="checkbox"
                   onChange={() => handleCategoryChange(category)}
                   checked={selectedCategories.includes(category)}
@@ -134,7 +134,7 @@ const JobListing = () => {
             {JobLocations.map((location, index) => (
               <li className="flex gap-3 items-center" key={index}>
                 <input
-                  className="scale-125 accent-yellow-500 "
+                  className="scale-125 hover:scale-150 active:scale-125 transition-all duration-300 accent-yellow-500 "
                   type="checkbox"
                   onChange={() => handleLocationChange(location)}
                   checked={selectedLocations.includes(location)}
@@ -166,6 +166,7 @@ const JobListing = () => {
           <div className="flex items-center justify-center space-x-2 mt-10">
             <a href="#job-list">
               <img
+                className="hover:scale-110 transition-all duration-300"
                 onClick={() => setCurrentPage(Math.max(currentPage - 1, 1))}
                 src={assets.left_arrow_icon}
                 alt=""
@@ -178,8 +179,8 @@ const JobListing = () => {
                     onClick={() => setCurrentPage(index + 1)}
                     className={`w-10 h-10 flex items-center justify-center border border-gray-300 rounded ${
                       currentPage === index + 1
-                        ? "bg-yellow-100 text-yellow-500"
-                        : "text-gray-500 dark:text-white"
+                        ? "bg-yellow-500 text-black hover:scale-105 transition-all duration-300"
+                        : "text-gray-500 dark:text-white hover:scale-105 transition-all duration-300"
                     }`}
                   >
                     {index + 1}
@@ -189,6 +190,7 @@ const JobListing = () => {
             )}
             <a href="#job-list">
               <img
+                className="hover:scale-110 transition-all duration-300"
                 onClick={() =>
                   setCurrentPage(
                     Math.min(

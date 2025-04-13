@@ -133,7 +133,7 @@ const AddJob = () => {
           min={0}
         />
       </div>
-      <button className="w-28 py-3 mt-4 bg-black text-white rounded">
+      <button className="w-28 py-3 mt-4 bg-black text-white rounded hover:scale-105 active:scale-95 transition-all duration-300 hover:bg-gray-900">
         ADD
       </button>
     </form>

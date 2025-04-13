@@ -91,7 +91,7 @@ const ApplyJob = () => {
     <>
       <Navbar />
       <div className="min-h-screen flex flex-col py-10 container px-4 2xl:px-20 mx-auto dark:bg-black dark:text-white">
-        <div className="bg-white text-black rounded-lg w-full dark:bg-black dark:text-white">
+        <div className="bg-white text-black p-3 rounded-lg w-full dark:bg-black dark:text-white">
           <div className="flex justify-center md:justify-between flex-wrap gap-8 px-14 py-20 mb-6 bg-green-50 border border-green-400 rounded-xl dark:bg-green-950">
             <div className="flex flex-col md:flex-row items-center">
               <img
@@ -127,7 +127,7 @@ const ApplyJob = () => {
             <div className="flex flex-col justify-center text-end text-sm max-md:mx-auto max-md:text-center">
               <button
                 onClick={applyHandler}
-                className="bg-green-600 p-2.5 px-10 text-white rounded"
+                className="bg-green-600 p-2.5 px-10 text-white rounded hover:scale-105 active:scale-95 transition-all duration-300"
               >
                 {isAlreadyApplied ? "Already Applied" : "Apply Now"}
               </button>
@@ -138,7 +138,7 @@ const ApplyJob = () => {
           </div>
 
           <div className="flex flex-col lg:flex-row justify-between items-start">
-            <div className="w-full lg:w-2/3">
+            <div className="w-full lg:w-2/3 ml-2">
               <h2 className="font-bold text-2xl mb-4">Job description</h2>
               <div
                 className="rich-text text-black dark:text-white"
@@ -148,7 +148,7 @@ const ApplyJob = () => {
               ></div>
               <button
                 onClick={applyHandler}
-                className="bg-green-600 p-2.5 px-10 text-white rounded mt-10"
+                className="bg-green-600 p-2.5 px-10 text-white rounded mt-10 hover:scale-105 active:scale-95 transition-all duration-300"
               >
                 {isAlreadyApplied ? "Already Applied" : "Apply Now"}
               </button>

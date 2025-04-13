@@ -34,8 +34,8 @@ const Hero = () => {
             Start your journey toward a brighter future today. Explore top job
             openings and take the next big step in your career!
           </p>
-          <div className="flex items-center justify-between bg-white rounded text-gray-600 max-w-xl pl-4 mx-4 sm:mx-auto">
-            <div className="flex items-center">
+          <div className="flex items-center justify-between bg-white rounded text-gray-600 max-w-xl pl-4 mx-4 sm:mx-auto ">
+            <div className="flex items-center ">
               <img className="h-4 sm:h-5" src={assets.search_icon} alt="" />
               <input
                 type="text"
@@ -55,7 +55,7 @@ const Hero = () => {
             </div>
             <button
               onClick={onSearch}
-              className="bg-gradient-to-r from-green-600 to-green-950 px-6 py-2 rounded text-white m-1"
+              className="bg-gradient-to-r from-green-600 to-green-950 px-6 py-2 rounded text-white m-1 hover:scale-105 transition-all duration-300 active:scale-95"
             >
               Search
             </button>
@@ -67,36 +67,44 @@ const Hero = () => {
         <div className="flex justify-center gap-6 lg:gap-14 flex-wrap">
           <p className="font-medium text-center w-full">Trusted by</p>
 
-          <div className="bg-white dark:bg-white p-4 rounded-md shadow flex items-center justify-center h-16 w-32">
-            <img className="h-6" src={assets.amazon_logo} alt="Amazon Logo" />
+          <div className="bg-white dark:bg-white p-4 rounded-md shadow flex items-center justify-center h-16 w-32 hover:scale-105 transition-all duration-300 hover:bg-gray-200">
+            <img className="h-6 " src={assets.amazon_logo} alt="Amazon Logo" />
           </div>
 
-          <div className="bg-white dark:bg-white p-4 rounded-md shadow flex items-center justify-center h-16 w-32">
+          <div className="bg-white dark:bg-white p-4 rounded-md shadow flex items-center justify-center h-16 w-32 hover:scale-105 transition-all duration-300 hover:bg-gray-200">
             <img
-              className="h-6"
+              className="h-6 "
               src={assets.microsoft_logo}
               alt="Microsoft Logo"
             />
           </div>
 
-          <div className="bg-white dark:bg-white p-4 rounded-md shadow flex items-center justify-center h-16 w-32">
-            <img className="h-6" src={assets.samsung_logo} alt="Samsung Logo" />
+          <div className="bg-white dark:bg-white p-4 rounded-md shadow flex items-center justify-center h-16 w-32 hover:scale-105 transition-all duration-300 hover:bg-gray-200">
+            <img
+              className="h-6 "
+              src={assets.samsung_logo}
+              alt="Samsung Logo"
+            />
           </div>
 
-          <div className="bg-white dark:bg-white p-4 rounded-md shadow flex items-center justify-center h-16 w-32">
+          <div className="bg-white dark:bg-white p-4 rounded-md shadow flex items-center justify-center h-16 w-32 hover:scale-105 transition-all duration-300 hover:bg-gray-200">
             <img
-              className="h-6"
+              className="h-6 "
               src={assets.accenture_logo}
               alt="Accenture Logo"
             />
           </div>
 
-          <div className="bg-white dark:bg-white p-4 rounded-md shadow flex items-center justify-center h-16 w-32">
-            <img className="h-6" src={assets.walmart_logo} alt="Walmart Logo" />
+          <div className="bg-white dark:bg-white p-4 rounded-md shadow flex items-center justify-center h-16 w-32 hover:scale-105 transition-all duration-300 hover:bg-gray-200">
+            <img
+              className="h-6 "
+              src={assets.walmart_logo}
+              alt="Walmart Logo"
+            />
           </div>
 
-          <div className="bg-white dark:bg-white p-4 rounded-md shadow flex items-center justify-center h-16 w-32">
-            <img className="h-6" src={assets.adobe_logo} alt="Adobe Logo" />
+          <div className="bg-white dark:bg-white p-4 rounded-md shadow flex items-center justify-center h-16 w-32 hover:scale-105 transition-all duration-300 hover:bg-gray-200">
+            <img className="h-6 " src={assets.adobe_logo} alt="Adobe Logo" />
           </div>
         </div>
       </div>

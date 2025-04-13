@@ -42,12 +42,12 @@ const Dashboard = () => {
               <p className="max-sm:hidden">Welcome, {companyData.name}</p>
               <div className="relative group">
                 <img
-                  className="w-8 border rounded-full"
+                  className="w-8 border rounded-full "
                   src={companyData.image}
                   alt=""
                 />
                 <div className="absolute hidden group-hover:block top-0 right-0 z-10 text-black rounded pt-12">
-                  <ul className="list-none m-0 p-2 bg-white rounded-md border text-sm">
+                  <ul className="list-none m-0 p-2 bg-white rounded-md border text-sm hover:bg-gray-300 transition-all duration-300">
                     <li
                       onClick={logout}
                       className="py-1 px-2 cursor-pointer pr-10"
@@ -59,7 +59,7 @@ const Dashboard = () => {
               </div>
               <button
                 onClick={toggleDarkMode}
-                className="w-6 h-6 sm:w-7 sm:h-7 dark:rounded-full z-10 mt-1"
+                className="w-6 h-6 sm:w-7 sm:h-7 dark:rounded-full z-10 mt-1 hover:scale-105 active:scale-95 transition-all duration-300"
               >
                 {darkMode ? (
                   <img src={assets.day_mode} alt="" />
